@@ -1,24 +1,21 @@
 import React from 'react'
-import { useNavigate } from 'react-router-dom'
 import pizza from './images/pizza.jpg'
+import { Link } from 'react-router-dom'
+
 
 function Home() {
-  const navigate = useNavigate()
-   
- const navigateToOrder = () => {
-    navigate('/order')
- } 
-
-
   return (
     <div>
       <h2>
         Welcome to Bloom Pizza!
       </h2>
+      <Link to="/order">
+      <img alt="order-pizza" style={{ cursor: 'pointer '}} src={pizza} />
+      </Link>
       {/* clicking on the img should navigate to "/order" */}
-      <img alt="order-pizza" style={{ cursor: 'pointer' }} src={pizza} onClick={navigateToOrder} />
+     
     </div>
-  )
+  );
 }
 
 export default Home
